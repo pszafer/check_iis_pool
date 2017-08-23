@@ -39,11 +39,9 @@
 Import-Module WebAdministration
 
 $returnStateOK = 0
-$returnStateWarning = 1
+# $returnStateWarning = 1
 $returnStateCritical = 2
 $returnStateUnknown = 3
-$returnStatePendingReboot = $returnStateWarning
-$returnStateOptionalUpdates = $returnStateWarning
 
 $statuses = @{
 	ok = @()
@@ -87,5 +85,3 @@ else {
 	Write-Host "Cannot check AppPool state"
 	exit $returnStateUnknown
 }
-
-exit 0
